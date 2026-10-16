@@ -1,93 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>FiŠi-box Hall of Fame</title>
 <style>
-:root{--bg:#08111f;--card:#111d2e;--text:#f8fafc;--muted:#9fb0c7;--accent:#22c55e;--blue:#3b82f6;--gold:#fbbf24;--line:#26364d;--danger:#ef4444}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:linear-gradient(160deg,#06101f,#10213b);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:calc(18px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom))}
-.app{max-width:720px;margin:auto}
-.card{background:rgba(17,29,46,.96);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px;box-shadow:0 12px 34px rgba(0,0,0,.26)}
-h1,h2{margin:0 0 12px;text-align:center}h1{font-size:28px}h2{font-size:22px}.subtitle,.stats{text-align:center;color:var(--muted);margin-bottom:16px}
-.field-label,.question-title{display:block;font-weight:700;margin:18px 0 8px}
-select,input[type=text]{width:100%;min-height:50px;padding:12px 14px;border:1px solid #3a4c66;border-radius:12px;background:#0a1525;color:var(--text);font-size:17px;-webkit-appearance:none;appearance:none}
-.rating{display:flex;flex-direction:row-reverse;justify-content:center;gap:3px;padding:4px 0 8px}.rating input{position:absolute;opacity:0;pointer-events:none}.rating label{font-size:43px;line-height:1;color:#4b596c;cursor:pointer;margin:0;padding:3px;transition:color .12s,transform .12s}.rating label:active{transform:scale(.9)}.rating label:hover,.rating label:hover~label,.rating input:checked~label{color:var(--gold)}
-button{width:100%;min-height:52px;border:0;border-radius:13px;margin-top:10px;padding:12px;font-size:17px;font-weight:800;color:white;cursor:pointer}.save{background:var(--accent)}.export{background:var(--blue)}.secondary{background:#334155}.danger{background:var(--danger)}
-.message{text-align:center;min-height:24px;margin-top:10px;color:#86efac;font-weight:700}
-.ranking{display:grid;gap:9px}.rank-row{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:10px;background:#0a1525;border:1px solid var(--line);border-radius:14px;padding:11px}.rank{font-size:22px;text-align:center}.game-name{font-weight:800}.details{font-size:13px;color:var(--muted);margin-top:3px}.score{text-align:right;color:var(--gold);font-weight:900;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:18px}
-.note{font-size:13px;color:var(--muted);line-height:1.45;margin-top:12px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}.buttons button{margin-top:10px}@media(max-width:520px){.buttons{grid-template-columns:1fr}.rank-row{grid-template-columns:34px 1fr auto}.rating label{font-size:40px}}
+:root{--card:#111d2e;--text:#f8fafc;--muted:#9fb0c7;--green:#22c55e;--blue:#3b82f6;--gold:#fbbf24;--line:#26364d;--red:#ef4444}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:linear-gradient(160deg,#06101f,#10213b);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:calc(18px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom))}.app{max-width:720px;margin:auto}.card{background:rgba(17,29,46,.97);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px;box-shadow:0 12px 34px #0004}h1,h2{margin:0 0 12px;text-align:center}.sub,.stats{text-align:center;color:var(--muted);margin-bottom:16px}.label,.qtitle{display:block;font-weight:750;margin:18px 0 8px}select,input[type=text]{width:100%;min-height:50px;padding:12px 14px;border:1px solid #3a4c66;border-radius:12px;background:#0a1525;color:var(--text);font-size:17px}.rating{display:flex;justify-content:center;gap:4px}.star{font-size:43px;color:#4b596c;background:none;border:0;padding:3px;line-height:1;cursor:pointer}.star.on{color:var(--gold)}button.action{width:100%;min-height:52px;border:0;border-radius:13px;margin-top:12px;padding:12px;font-size:17px;font-weight:800;color:#fff;background:var(--green)}.reload{background:var(--blue)!important}.message{text-align:center;min-height:24px;margin-top:10px;font-weight:700}.ranking{display:grid;gap:9px}.row{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:10px;background:#0a1525;border:1px solid var(--line);border-radius:14px;padding:11px}.rank{font-size:22px;text-align:center}.game{font-weight:800}.detail{font-size:13px;color:var(--muted);margin-top:3px}.score{text-align:right;color:var(--gold);font-weight:900}.empty{text-align:center;color:var(--muted);padding:18px}.note{font-size:13px;color:var(--muted);line-height:1.45;margin-top:12px}
 </style>
 </head>
-<body>
-<main class="app">
-<section class="card">
-<h1>🎮 FiŠi-box Hall of Fame</h1>
-<div class="subtitle">Rodinné hodnotenie hier</div>
-<div class="stats" id="counter">Počet hodnotení: 0</div>
-<label class="field-label" for="player">Hráč</label>
-<select id="player">
-<option>Jakubko</option><option>Timka</option><option>Julka</option><option>Filipko</option><option>Šimonko</option><option>Tati</option><option>Mami</option>
-</select>
-<label class="field-label" for="game">Hra</label>
-<input type="text" id="game" autocomplete="off" placeholder="napr. Micro Machines 2">
-<div id="questions"></div>
-<button class="save" id="saveButton">💾 Uložiť hodnotenie</button>
-<div class="message" id="message" aria-live="polite"></div>
-</section>
-<section class="card">
-<h2>🏆 Automatický TOP 10</h2>
-<div class="subtitle">Poradie podľa priemeru všetkých 5 otázok</div>
-<div class="ranking" id="ranking"></div>
-<div class="note">Pri zhode rozhoduje najprv vyšší počet hodnotení a potom názov hry. Názvy sa porovnávajú bez ohľadu na veľké a malé písmená.</div>
-</section>
-<section class="card">
-<h2>📁 Dáta</h2>
-<div class="buttons">
-<button class="export" id="exportButton">📊 Export CSV</button>
-<button class="secondary" id="backupButton">🧾 Export JSON zálohy</button>
-</div>
-<button class="danger" id="clearButton">🗑️ Vymazať všetky hodnotenia</button>
-<div class="note">Dáta zostávajú v tomto Safari na tomto zariadení. Pred vymazaním histórie Safari odporúčam exportovať CSV alebo JSON zálohu.</div>
-</section>
+<body><main class="app">
+<section class="card"><h1>🎮 FiŠi-box Hall of Fame</h1><div class="sub">Rodinné hodnotenie hier</div><div class="stats" id="counter">Pripájam databázu…</div>
+<label class="label" for="player">Hráč</label><select id="player"><option>Jakubko</option><option>Timka</option><option>Julka</option><option>Filipko</option><option>Šimonko</option><option>Tati</option><option>Mami</option></select>
+<label class="label" for="game">Hra</label><input id="game" type="text" maxlength="80" autocomplete="off" placeholder="napr. Micro Machines 2"><div id="questions"></div>
+<button class="action" id="saveBtn">💾 Uložiť hodnotenie</button><div class="message" id="msg" aria-live="polite"></div></section>
+<section class="card"><h2>🏆 Automatický TOP 10</h2><div class="sub">Spoločný rebríček zo všetkých zariadení</div><div id="ranking" class="ranking"></div><button class="action reload" id="reloadBtn">🔄 Obnoviť rebríček</button><div class="note">Dáta sa ukladajú do Cloud Firestore. Pri rovnosti rozhoduje vyšší počet hodnotení.</div></section>
 </main>
-<script>
-const STORAGE_KEY='fisiboxRatings';
-const questions=['Aká bola zábava?','Aká bola hrateľnosť?','Chceš hrať znova?','Bolo ovládanie jednoduché?','Odporučil by si hru ostatným?'];
-const container=document.getElementById('questions');
-questions.forEach((q,index)=>{
- const block=document.createElement('div');
- block.innerHTML=`<div class="question-title">${q}</div><div class="rating" aria-label="${q}">${[5,4,3,2,1].map(i=>`<input type="radio" id="q${index}_${i}" name="q${index}" value="${i}"><label for="q${index}_${i}" aria-label="${i} z 5">★</label>`).join('')}</div>`;
- container.appendChild(block);
-});
-function loadData(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch(e){return []}}
-function saveData(data){localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}
-function answer(i){const x=document.querySelector(`input[name="q${i}"]:checked`);return x?Number(x.value):null}
-function normalizeGame(s){return s.trim().replace(/\s+/g,' ').toLocaleLowerCase('sk-SK')}
-function csvCell(v){return `"${String(v??'').replace(/"/g,'""')}"`}
-function download(content,name,type){const blob=new Blob(['\ufeff',content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
-function flash(text,error=false){const m=document.getElementById('message');m.textContent=text;m.style.color=error?'#fca5a5':'#86efac';setTimeout(()=>{if(m.textContent===text)m.textContent=''},2500)}
-function render(){
- const data=loadData();document.getElementById('counter').textContent=`Počet hodnotení: ${data.length}`;
- const grouped={};
- data.forEach(r=>{const key=normalizeGame(r.game);if(!key)return;if(!grouped[key])grouped[key]={name:r.game.trim(),sum:0,count:0};const vals=[r.fun,r.gameplay,r.again,r.controls,r.recommend].map(Number).filter(n=>Number.isFinite(n)&&n>=1&&n<=5);if(vals.length){grouped[key].sum+=vals.reduce((a,b)=>a+b,0)/vals.length;grouped[key].count++}});
- const rows=Object.values(grouped).filter(x=>x.count).map(x=>({...x,avg:x.sum/x.count})).sort((a,b)=>b.avg-a.avg||b.count-a.count||a.name.localeCompare(b.name,'sk')).slice(0,10);
- const box=document.getElementById('ranking');box.innerHTML='';
- if(!rows.length){box.innerHTML='<div class="empty">Zatiaľ nie sú uložené žiadne hodnotenia.</div>';return}
- rows.forEach((r,i)=>{const medal=['🥇','🥈','🥉'][i]||`${i+1}.`;const stars='★'.repeat(Math.round(r.avg))+'☆'.repeat(5-Math.round(r.avg));const el=document.createElement('div');el.className='rank-row';el.innerHTML=`<div class="rank">${medal}</div><div><div class="game-name"></div><div class="details">${r.count} ${r.count===1?'hodnotenie':'hodnotení'}</div></div><div class="score">${r.avg.toFixed(2)}<br><span aria-label="${r.avg.toFixed(2)} z 5">${stars}</span></div>`;el.querySelector('.game-name').textContent=r.name;box.appendChild(el)});
-}
-document.getElementById('saveButton').addEventListener('click',()=>{
- const game=document.getElementById('game').value.trim();if(!game){flash('Zadaj názov hry.',true);return}
- const values=questions.map((_,i)=>answer(i));if(values.some(v=>v===null)){flash('Ohodnoť všetkých 5 otázok.',true);return}
- const now=new Date();const entry={dateISO:now.toISOString(),dateLocal:now.toLocaleString('sk-SK'),player:document.getElementById('player').value,game,fun:values[0],gameplay:values[1],again:values[2],controls:values[3],recommend:values[4]};const data=loadData();data.push(entry);saveData(data);document.getElementById('game').value='';document.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);flash('✅ Hodnotenie uložené');render();
-});
-document.getElementById('exportButton').addEventListener('click',()=>{const data=loadData();if(!data.length){flash('Nie sú uložené žiadne hodnotenia.',true);return}const head=['Datum','Hrac','Hra','Zabava','Hratelnost','ChceHratZnova','Ovladanie','Odporuca','Priemer'];const lines=[head.map(csvCell).join(';')];data.forEach(r=>{const vals=[r.fun,r.gameplay,r.again,r.controls,r.recommend].map(Number);const avg=vals.reduce((a,b)=>a+b,0)/vals.length;lines.push([r.dateLocal||r.dateISO,r.player,r.game,...vals,avg.toFixed(2).replace('.',',')].map(csvCell).join(';'))});download(lines.join('\r\n'),'fisibox_hall_of_fame.csv','text/csv;charset=utf-8');});
-document.getElementById('backupButton').addEventListener('click',()=>{const data=loadData();if(!data.length){flash('Nie sú uložené žiadne hodnotenia.',true);return}download(JSON.stringify(data,null,2),'fisibox_hall_of_fame_backup.json','application/json;charset=utf-8');});
-document.getElementById('clearButton').addEventListener('click',()=>{if(confirm('Naozaj chceš vymazať všetky hodnotenia? Táto akcia sa nedá vrátiť späť.')){localStorage.removeItem(STORAGE_KEY);render();flash('Všetky hodnotenia boli vymazané.')}});
-render();
-</script>
-</body>
-</html>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
+import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js';
+
+// VLOŽ SEM KONFIGURÁCIU, KTORÚ TI FIREBASE ZOBRAZÍ PRI REGISTRÁCII WEB APPKY.
+const firebaseConfig = {
+  apiKey: "AIzaSyCCy8D5_PQ0jQc4HQku8IATs2XbGIf1KJQ",
+  authDomain: "fisibox-hall-of-fame.firebaseapp.com",
+  projectId: "fisibox-hall-of-fame",
+  storageBucket: "fisibox-hall-of-fame.firebasestorage.app",
+  messagingSenderId: "155243338136",
+  appId: "1:155243338136:web:27412d5ecb83a7d8c1f3ed"
+};
+const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
+const qs=['Aká bola zábava?','Aká bola hrateľnosť?','Chceš hrať znova?','Bolo ovládanie jednoduché?','Odporučil by si hru ostatným?'];
+const answers=Array(qs.length).fill(0), qbox=document.getElementById('questions');
+qs.forEach((q,qi)=>{const wrap=document.createElement('div');wrap.innerHTML=`<div class="qtitle">${q}</div><div class="rating"></div>`;const r=wrap.querySelector('.rating');for(let n=1;n<=5;n++){const b=document.createElement('button');b.type='button';b.className='star';b.textContent='★';b.setAttribute('aria-label',`${n} z 5`);b.onclick=()=>{answers[qi]=n;[...r.children].forEach((x,i)=>x.classList.toggle('on',i<n))};r.appendChild(b)}qbox.appendChild(wrap)});
+function flash(t,bad=false){const m=document.getElementById('msg');m.textContent=t;m.style.color=bad?'#fca5a5':'#86efac';setTimeout(()=>{if(m.textContent===t)m.textContent=''},3200)}
+function normalize(s){return String(s||'').trim().replace(/\s+/g,' ').toLocaleLowerCase('sk-SK')}
+function render(data){document.getElementById('counter').textContent=`Počet hodnotení: ${data.length}`;const G={};data.forEach(r=>{const k=normalize(r.game),v=[r.fun,r.gameplay,r.again,r.controls,r.recommend].map(Number);if(!k||v.some(x=>!Number.isFinite(x)))return;if(!G[k])G[k]={name:r.game,sum:0,count:0};G[k].sum+=v.reduce((a,b)=>a+b,0)/5;G[k].count++});const rows=Object.values(G).map(x=>({...x,avg:x.sum/x.count})).sort((a,b)=>b.avg-a.avg||b.count-a.count||a.name.localeCompare(b.name,'sk')).slice(0,10),box=document.getElementById('ranking');box.innerHTML='';if(!rows.length){box.innerHTML='<div class="empty">Zatiaľ nie sú hodnotenia.</div>';return}rows.forEach((r,i)=>{const e=document.createElement('div');e.className='row';const medal=['🥇','🥈','🥉'][i]||`${i+1}.`,stars='★'.repeat(Math.round(r.avg))+'☆'.repeat(5-Math.round(r.avg));e.innerHTML=`<div class="rank">${medal}</div><div><div class="game"></div><div class="detail">${r.count} ${r.count===1?'hodnotenie':'hodnotení'}</div></div><div class="score">${r.avg.toFixed(2)}<br>${stars}</div>`;e.querySelector('.game').textContent=r.name;box.appendChild(e)})}
+async function load(){try{const snap=await getDocs(query(collection(db,'ratings'),orderBy('createdAt','desc')));render(snap.docs.map(x=>x.data()))}catch(e){console.error(e);flash('Rebríček sa nepodarilo načítať.',true)}}
+async function save(){const game=document.getElementById('game').value.trim(),player=document.getElementById('player').value;if(!game)return flash('Zadaj názov hry.',true);if(answers.some(x=>x<1))return flash('Vyplň všetkých 5 hodnotení.',true);document.getElementById('saveBtn').disabled=true;try{await addDoc(collection(db,'ratings'),{player,game,gameKey:normalize(game),fun:answers[0],gameplay:answers[1],again:answers[2],controls:answers[3],recommend:answers[4],createdAt:serverTimestamp()});flash('✅ Hodnotenie uložené');document.getElementById('game').value='';answers.fill(0);document.querySelectorAll('.star').forEach(x=>x.classList.remove('on'));await load()}catch(e){console.error(e);flash('Uloženie zlyhalo. Skontroluj Firebase pravidlá.',true)}finally{document.getElementById('saveBtn').disabled=false}}
+document.getElementById('saveBtn').onclick=save;document.getElementById('reloadBtn').onclick=load;
+try{await signInAnonymously(auth);await load()}catch(e){console.error(e);document.getElementById('counter').textContent='Firebase nie je pripojený';flash('Skontroluj konfiguráciu a Anonymous Authentication.',true)}
+</script></body></html>
