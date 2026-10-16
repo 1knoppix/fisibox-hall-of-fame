@@ -25,7 +25,7 @@ import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimest
 
 // VLOŽ SEM KONFIGURÁCIU, KTORÚ TI FIREBASE ZOBRAZÍ PRI REGISTRÁCII WEB APPKY.
 const firebaseConfig = {
-  apiKey: "AIzaSyCCy8D5_PQ0jQc4HQku8IATs2XbGIf1KJQ",
+  apiKey: "AIzaSyCCy8D5_PQOjQc4HQku8IATs2XbGIf1KJQ",
   authDomain: "fisibox-hall-of-fame.firebaseapp.com",
   projectId: "fisibox-hall-of-fame",
   storageBucket: "fisibox-hall-of-fame.firebasestorage.app",
@@ -42,5 +42,20 @@ function render(data){document.getElementById('counter').textContent=`Počet hod
 async function load(){try{const snap=await getDocs(query(collection(db,'ratings'),orderBy('createdAt','desc')));render(snap.docs.map(x=>x.data()))}catch(e){console.error(e);flash('Rebríček sa nepodarilo načítať.',true)}}
 async function save(){const game=document.getElementById('game').value.trim(),player=document.getElementById('player').value;if(!game)return flash('Zadaj názov hry.',true);if(answers.some(x=>x<1))return flash('Vyplň všetkých 5 hodnotení.',true);document.getElementById('saveBtn').disabled=true;try{await addDoc(collection(db,'ratings'),{player,game,gameKey:normalize(game),fun:answers[0],gameplay:answers[1],again:answers[2],controls:answers[3],recommend:answers[4],createdAt:serverTimestamp()});flash('✅ Hodnotenie uložené');document.getElementById('game').value='';answers.fill(0);document.querySelectorAll('.star').forEach(x=>x.classList.remove('on'));await load()}catch(e){console.error(e);flash('Uloženie zlyhalo. Skontroluj Firebase pravidlá.',true)}finally{document.getElementById('saveBtn').disabled=false}}
 document.getElementById('saveBtn').onclick=save;document.getElementById('reloadBtn').onclick=load;
-try{await signInAnonymously(auth);await load()}catch(e){console.error(e);document.getElementById('counter').textContent='Firebase nie je pripojený';flash('Chyba: ' + e.code + ' – ' + e.message, true)}
+try {
+  await signInAnonymously(auth);
+  document.getElementById('counter').textContent =
+    'Firebase pripojený, načítavam hodnotenia…';
+  await load();
+} catch (e) {
+  console.error('Firebase chyba:', e);
+
+  const code = e?.code || 'bez-kódu';
+  const message = e?.message || String(e);
+
+  document.getElementById('counter').textContent =
+    'Firebase nie je pripojený';
+
+  flash('Chyba: ' + code + ' | ' + message, true);
+}
 </script></body></html>
