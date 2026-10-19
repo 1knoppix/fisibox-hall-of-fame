@@ -2,10 +2,26 @@
 <html lang="sk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#06101f">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+>
+
+<meta
+    name="theme-color"
+    content="#06101f"
+>
 
 <title>FiŠi-box Hall of Fame</title>
 
@@ -30,12 +46,19 @@
 body {
     margin: 0;
     min-height: 100vh;
+
     padding:
         calc(14px + env(safe-area-inset-top))
         14px
         calc(84px + env(safe-area-inset-bottom));
 
-    background: linear-gradient(160deg, #06101f, #10213b);
+    background:
+        linear-gradient(
+            160deg,
+            #06101f,
+            #10213b
+        );
+
     color: var(--text);
 
     font-family:
@@ -54,11 +77,17 @@ body {
     padding: 20px;
     margin-bottom: 16px;
 
-    background: rgba(17, 29, 46, 0.97);
-    border: 1px solid var(--line);
+    background:
+        rgba(17, 29, 46, 0.97);
+
+    border:
+        1px solid var(--line);
+
     border-radius: 22px;
 
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.27);
+    box-shadow:
+        0 12px 34px
+        rgba(0, 0, 0, 0.27);
 }
 
 h1,
@@ -149,11 +178,13 @@ button:disabled {
 }
 
 .reload {
-    background: var(--blue) !important;
+    background:
+        var(--blue) !important;
 }
 
 .export {
-    background: #334155 !important;
+    background:
+        #334155 !important;
 }
 
 .message {
@@ -172,7 +203,11 @@ button:disabled {
 
 .row {
     display: grid;
-    grid-template-columns: 42px 1fr auto;
+    grid-template-columns:
+        42px
+        1fr
+        auto;
+
     align-items: center;
     gap: 10px;
 
@@ -195,6 +230,7 @@ button:disabled {
 
 .detail {
     margin-top: 3px;
+
     color: var(--muted);
     font-size: 13px;
 }
@@ -202,12 +238,14 @@ button:disabled {
 .score {
     color: var(--gold);
     font-weight: 900;
+
     text-align: right;
     white-space: nowrap;
 }
 
 .empty {
     padding: 18px;
+
     color: var(--muted);
     text-align: center;
 }
@@ -230,9 +268,11 @@ button:disabled {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
 
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -241,7 +281,10 @@ button:disabled {
     padding: 15px;
 
     background: var(--card2);
-    border: 1px solid var(--line);
+
+    border:
+        1px solid var(--line);
+
     border-radius: 16px;
 
     text-align: center;
@@ -255,6 +298,7 @@ button:disabled {
     margin: 5px 0;
 
     color: var(--gold);
+
     font-size: 22px;
     font-weight: 900;
 
@@ -277,8 +321,13 @@ button:disabled {
 
 .bar-head {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
     gap: 10px;
 
     margin-bottom: 6px;
@@ -291,6 +340,7 @@ button:disabled {
 
 .bar-head span {
     color: var(--muted);
+
     text-align: right;
     white-space: nowrap;
 }
@@ -299,8 +349,8 @@ button:disabled {
     height: 12px;
 
     background: #26364d;
-    border-radius: 999px;
 
+    border-radius: 999px;
     overflow: hidden;
 }
 
@@ -308,27 +358,35 @@ button:disabled {
     display: block;
     height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--violet)
-    );
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--violet)
+        );
 
     border-radius: 999px;
 }
 
 .recent .row {
-    grid-template-columns: 1fr auto;
+    grid-template-columns:
+        1fr
+        auto;
 }
 
 .small-buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     gap: 10px;
 }
 
 .nav {
     position: fixed;
+
     left: 0;
     right: 0;
     bottom: 0;
@@ -340,10 +398,16 @@ button:disabled {
     padding:
         8px
         12px
-        calc(8px + env(safe-area-inset-bottom));
+        calc(
+            8px +
+            env(safe-area-inset-bottom)
+        );
 
-    background: rgba(5, 13, 25, 0.96);
-    border-top: 1px solid var(--line);
+    background:
+        rgba(5, 13, 25, 0.96);
+
+    border-top:
+        1px solid var(--line);
 }
 
 .nav button {
@@ -366,12 +430,16 @@ button:disabled {
 }
 
 @media (max-width: 520px) {
+
     .star {
         font-size: 40px;
     }
 
     .row {
-        grid-template-columns: 36px 1fr auto;
+        grid-template-columns:
+            36px
+            1fr
+            auto;
     }
 
     .small-buttons {
@@ -385,21 +453,33 @@ button:disabled {
 
 <main class="app">
 
-<section id="page-rate" class="page active">
+<section
+    id="page-rate"
+    class="page active"
+>
 
     <section class="card">
 
-        <h1>🎮 FiŠi-box Hall of Fame</h1>
+        <h1>
+            🎮 FiŠi-box Hall of Fame
+        </h1>
 
         <div class="sub">
             Rodinné hodnotenie hier
         </div>
 
-        <div class="stats" id="counter">
+        <div
+            class="stats"
+            id="counter"
+        >
             Pripájam databázu…
         </div>
 
-        <label class="label" for="player">
+
+        <label
+            class="label"
+            for="player"
+        >
             Hráč
         </label>
 
@@ -413,7 +493,44 @@ button:disabled {
             <option>Mami</option>
         </select>
 
-        <label class="label" for="game">
+
+        <label
+            class="label"
+            for="platform"
+        >
+            Platforma
+        </label>
+
+        <select id="platform">
+
+            <option
+                value=""
+                selected
+                disabled
+            >
+                Vyber platformu
+            </option>
+
+            <option>ATARI</option>
+            <option>SEGA</option>
+            <option>NINTENDO</option>
+            <option>MAME</option>
+            <option>NEOGEO</option>
+            <option>AMIGA</option>
+            <option>XBOX</option>
+            <option>PS</option>
+            <option>PC Engine</option>
+            <option>DOS</option>
+            <option>ZX</option>
+            <option>APPLE II</option>
+
+        </select>
+
+
+        <label
+            class="label"
+            for="game"
+        >
             Hra
         </label>
 
@@ -425,43 +542,57 @@ button:disabled {
             placeholder="napr. Micro Machines 2"
         >
 
+
         <div id="questions"></div>
+
 
         <button
             type="button"
             class="action"
-            id="saveBtn">
+            id="saveBtn"
+        >
             💾 Uložiť hodnotenie
         </button>
+
 
         <div
             class="message"
             id="msg"
-            aria-live="polite">
-        </div>
+            aria-live="polite"
+        ></div>
 
     </section>
 
+
     <section class="card">
 
-        <h2>🏆 Automatický TOP 10</h2>
+        <h2>
+            🏆 Automatický TOP 10
+        </h2>
 
         <div class="sub">
-            Spoločný rebríček zo všetkých zariadení
+            Spoločný rebríček
+            zo všetkých zariadení
         </div>
 
-        <div id="ranking" class="ranking"></div>
+        <div
+            id="ranking"
+            class="ranking"
+        ></div>
 
         <button
             type="button"
             class="action reload"
-            id="reloadBtn">
+            id="reloadBtn"
+        >
             🔄 Obnoviť rebríček
         </button>
 
         <div class="note">
-            Dáta sa ukladajú do Cloud Firestore.
-            Pri rovnosti rozhoduje vyšší počet hodnotení.
+            Dáta sa ukladajú
+            do Cloud Firestore.
+            Pri rovnosti rozhoduje
+            vyšší počet hodnotení.
         </div>
 
     </section>
@@ -469,40 +600,118 @@ button:disabled {
 </section>
 
 
-<section id="page-stats" class="page">
+<section
+    id="page-stats"
+    class="page"
+>
 
     <section class="card">
 
-        <h1>📊 Štatistiky</h1>
+        <h1>
+            📊 Štatistiky
+        </h1>
 
         <div class="sub">
-            Aktuálny prehľad FiŠi-box sezóny
+            Aktuálny prehľad
+            FiŠi-box sezóny
         </div>
+
 
         <div class="grid">
 
             <div class="metric">
                 <div class="icon">⭐</div>
-                <div class="value" id="mRatings">0</div>
-                <div class="caption">hodnotení</div>
+
+                <div
+                    class="value"
+                    id="mRatings"
+                >
+                    0
+                </div>
+
+                <div class="caption">
+                    hodnotení
+                </div>
             </div>
+
 
             <div class="metric">
                 <div class="icon">🎮</div>
-                <div class="value" id="mGames">0</div>
-                <div class="caption">rôznych hier</div>
+
+                <div
+                    class="value"
+                    id="mGames"
+                >
+                    0
+                </div>
+
+                <div class="caption">
+                    rôznych hier
+                </div>
             </div>
+
 
             <div class="metric">
                 <div class="icon">👑</div>
-                <div class="value" id="mPlayer">–</div>
-                <div class="caption">najaktívnejší hráč</div>
+
+                <div
+                    class="value"
+                    id="mPlayer"
+                >
+                    –
+                </div>
+
+                <div class="caption">
+                    najaktívnejší hráč
+                </div>
             </div>
+
 
             <div class="metric">
                 <div class="icon">🔥</div>
-                <div class="value" id="mPopular">–</div>
-                <div class="caption">najviac hodnotená hra</div>
+
+                <div
+                    class="value"
+                    id="mPopular"
+                >
+                    –
+                </div>
+
+                <div class="caption">
+                    najviac hodnotená hra
+                </div>
+            </div>
+
+
+            <div class="metric">
+                <div class="icon">🕹️</div>
+
+                <div
+                    class="value"
+                    id="mPlatform"
+                >
+                    –
+                </div>
+
+                <div class="caption">
+                    najaktívnejšia platforma
+                </div>
+            </div>
+
+
+            <div class="metric">
+                <div class="icon">🏅</div>
+
+                <div
+                    class="value"
+                    id="mBestPlatform"
+                >
+                    –
+                </div>
+
+                <div class="caption">
+                    najlepšie hodnotená platforma
+                </div>
             </div>
 
         </div>
@@ -524,6 +733,22 @@ button:disabled {
     <section class="card">
 
         <h2 class="section-title">
+            🕹️ Aktivita podľa platformy
+        </h2>
+
+        <div id="platformStats"></div>
+
+        <div class="note">
+            Staršie hodnotenia bez platformy
+            sú zaradené ako Nezaradené.
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2 class="section-title">
             🎯 Najčastejšie hodnotené hry
         </h2>
 
@@ -538,7 +763,10 @@ button:disabled {
             🕘 Posledné hodnotenia
         </h2>
 
-        <div id="recent" class="list recent"></div>
+        <div
+            id="recent"
+            class="list recent"
+        ></div>
 
     </section>
 
@@ -554,22 +782,25 @@ button:disabled {
             <button
                 type="button"
                 class="action export"
-                id="exportBtn">
+                id="exportBtn"
+            >
                 ⬇️ Export CSV
             </button>
 
             <button
                 type="button"
                 class="action reload"
-                id="refreshStatsBtn">
+                id="refreshStatsBtn"
+            >
                 🔄 Obnoviť dáta
             </button>
 
         </div>
 
         <div class="note">
-            CSV obsahuje všetky jednotlivé hodnotenia
-            uložené vo Firestore a dá sa otvoriť v Exceli.
+            CSV obsahuje všetky
+            jednotlivé hodnotenia,
+            hráčov, hry aj platformy.
         </div>
 
     </section>
@@ -584,13 +815,15 @@ button:disabled {
     <button
         type="button"
         data-page="rate"
-        class="active">
+        class="active"
+    >
         ⭐ Hodnotenie
     </button>
 
     <button
         type="button"
-        data-page="stats">
+        data-page="stats"
+    >
         📊 Štatistiky
     </button>
 
@@ -629,9 +862,15 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+const app =
+    initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
+
+const db =
+    getFirestore(app);
+
 
 let allData = [];
 
@@ -644,80 +883,124 @@ const questions = [
     "Odporučil by si hru ostatným?"
 ];
 
-const answers = Array(questions.length).fill(0);
+
+const answers =
+    Array(questions.length).fill(0);
+
+
 const questionContainer =
-    document.getElementById("questions");
+    document.getElementById(
+        "questions"
+    );
 
 
-questions.forEach((question, questionIndex) => {
+questions.forEach(
+    (question, questionIndex) => {
 
-    const wrapper =
-        document.createElement("div");
+        const wrapper =
+            document.createElement("div");
 
-    wrapper.innerHTML = `
-        <div class="qtitle">
-            ${question}
-        </div>
 
-        <div class="rating"></div>
-    `;
+        wrapper.innerHTML = `
+            <div class="qtitle">
+                ${question}
+            </div>
 
-    const rating =
-        wrapper.querySelector(".rating");
+            <div class="rating"></div>
+        `;
 
-    for (
-        let number = 1;
-        number <= 5;
-        number++
-    ) {
 
-        const button =
-            document.createElement("button");
-
-        button.type = "button";
-        button.className = "star";
-        button.textContent = "★";
-
-        button.setAttribute(
-            "aria-label",
-            `${number} z 5`
-        );
-
-        button.onclick = () => {
-
-            answers[questionIndex] = number;
-
-            [...rating.children].forEach(
-                (star, index) => {
-
-                    star.classList.toggle(
-                        "on",
-                        index < number
-                    );
-                }
+        const rating =
+            wrapper.querySelector(
+                ".rating"
             );
-        };
 
-        rating.appendChild(button);
+
+        for (
+            let number = 1;
+            number <= 5;
+            number++
+        ) {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type = "button";
+
+            button.className = "star";
+
+            button.textContent = "★";
+
+
+            button.setAttribute(
+                "aria-label",
+                `${number} z 5`
+            );
+
+
+            button.onclick = () => {
+
+                answers[
+                    questionIndex
+                ] = number;
+
+
+                [
+                    ...rating.children
+                ].forEach(
+                    (star, index) => {
+
+                        star.classList.toggle(
+                            "on",
+                            index < number
+                        );
+                    }
+                );
+            };
+
+
+            rating.appendChild(
+                button
+            );
+        }
+
+
+        questionContainer.appendChild(
+            wrapper
+        );
     }
-
-    questionContainer.appendChild(wrapper);
-});
+);
 
 
-function flash(text, error = false) {
+function flash(
+    text,
+    error = false
+) {
 
     const message =
-        document.getElementById("msg");
+        document.getElementById(
+            "msg"
+        );
+
 
     message.textContent = text;
 
+
     message.style.color =
-        error ? "#fca5a5" : "#86efac";
+        error
+            ? "#fca5a5"
+            : "#86efac";
+
 
     setTimeout(() => {
 
-        if (message.textContent === text) {
+        if (
+            message.textContent === text
+        ) {
+
             message.textContent = "";
         }
 
@@ -725,16 +1008,27 @@ function flash(text, error = false) {
 }
 
 
-function normalizeGameName(value) {
+function normalizeGameName(
+    value
+) {
 
-    return String(value || "")
-        .trim()
-        .replace(/\s+/g, " ")
-        .toLocaleLowerCase("sk-SK");
+    return String(
+        value || ""
+    )
+    .trim()
+    .replace(
+        /\s+/g,
+        " "
+    )
+    .toLocaleLowerCase(
+        "sk-SK"
+    );
 }
 
 
-function getRatingAverage(record) {
+function getRatingAverage(
+    record
+) {
 
     const values = [
         record.fun,
@@ -744,28 +1038,46 @@ function getRatingAverage(record) {
         record.recommend
     ].map(Number);
 
+
     return values.reduce(
-        (sum, value) => sum + value,
+        (sum, value) =>
+            sum + value,
         0
     ) / values.length;
 }
 
 
-function aggregateData(data) {
+function aggregateData(
+    data
+) {
 
     const games = {};
     const players = {};
+    const platforms = {};
+
 
     data.forEach(record => {
 
         const gameKey =
-            normalizeGameName(record.game);
+            normalizeGameName(
+                record.game
+            );
+
 
         const playerName =
-            record.player || "Neznámy";
+            record.player ||
+            "Neznámy";
+
+
+        const platformName =
+            record.platform ||
+            "Nezaradené";
+
 
         const average =
-            getRatingAverage(record);
+            getRatingAverage(
+                record
+            );
 
 
         if (gameKey) {
@@ -779,8 +1091,13 @@ function aggregateData(data) {
                 };
             }
 
-            games[gameKey].total += average;
-            games[gameKey].count += 1;
+
+            games[gameKey].total +=
+                average;
+
+
+            games[gameKey].count +=
+                1;
         }
 
 
@@ -793,31 +1110,105 @@ function aggregateData(data) {
             };
         }
 
-        players[playerName].total += average;
-        players[playerName].count += 1;
+
+        players[playerName].total +=
+            average;
+
+
+        players[playerName].count +=
+            1;
+
+
+        if (!platforms[platformName]) {
+
+            platforms[platformName] = {
+                name: platformName,
+                total: 0,
+                count: 0,
+                games: new Set()
+            };
+        }
+
+
+        platforms[
+            platformName
+        ].total += average;
+
+
+        platforms[
+            platformName
+        ].count += 1;
+
+
+        if (gameKey) {
+
+            platforms[
+                platformName
+            ].games.add(
+                gameKey
+            );
+        }
     });
 
 
-    return {
-
-        games:
-            Object.values(games).map(game => ({
+    const gameList =
+        Object.values(games).map(
+            game => ({
                 ...game,
-                average:
-                    game.total / game.count
-            })),
 
-        players:
-            Object.values(players).map(player => ({
-                ...player,
                 average:
-                    player.total / player.count
-            }))
+                    game.total /
+                    game.count
+            })
+        );
+
+
+    const playerList =
+        Object.values(players).map(
+            player => ({
+                ...player,
+
+                average:
+                    player.total /
+                    player.count
+            })
+        );
+
+
+    const platformList =
+        Object.values(platforms).map(
+            platform => ({
+
+                name:
+                    platform.name,
+
+                total:
+                    platform.total,
+
+                count:
+                    platform.count,
+
+                gameCount:
+                    platform.games.size,
+
+                average:
+                    platform.total /
+                    platform.count
+            })
+        );
+
+
+    return {
+        games: gameList,
+        players: playerList,
+        platforms: platformList
     };
 }
 
 
-function renderTop10(data) {
+function renderTop10(
+    data
+) {
 
     document.getElementById(
         "counter"
@@ -831,19 +1222,27 @@ function renderTop10(data) {
 
     const topGames =
         aggregated.games
-            .sort((a, b) =>
-                b.average - a.average ||
-                b.count - a.count ||
-                a.name.localeCompare(
-                    b.name,
-                    "sk"
-                )
+            .sort(
+                (a, b) =>
+                    b.average -
+                    a.average ||
+
+                    b.count -
+                    a.count ||
+
+                    a.name.localeCompare(
+                        b.name,
+                        "sk"
+                    )
             )
             .slice(0, 10);
 
 
     const ranking =
-        document.getElementById("ranking");
+        document.getElementById(
+            "ranking"
+        );
+
 
     ranking.innerHTML = "";
 
@@ -860,61 +1259,92 @@ function renderTop10(data) {
     }
 
 
-    topGames.forEach((game, index) => {
+    topGames.forEach(
+        (game, index) => {
 
-        const element =
-            document.createElement("div");
-
-        element.className = "row";
-
-
-        const medal =
-            ["🥇", "🥈", "🥉"][index] ||
-            `${index + 1}.`;
+            const element =
+                document.createElement(
+                    "div"
+                );
 
 
-        const rounded =
-            Math.round(game.average);
+            element.className =
+                "row";
 
 
-        const stars =
-            "★".repeat(rounded) +
-            "☆".repeat(5 - rounded);
+            const medal =
+                [
+                    "🥇",
+                    "🥈",
+                    "🥉"
+                ][index] ||
+
+                `${index + 1}.`;
 
 
-        element.innerHTML = `
-            <div class="rank">
-                ${medal}
-            </div>
+            const rounded =
+                Math.round(
+                    game.average
+                );
 
-            <div>
-                <div class="game"></div>
 
-                <div class="detail">
-                    ${game.count}
-                    ${
-                        game.count === 1
-                            ? "hodnotenie"
-                            : "hodnotení"
-                    }
+            const stars =
+                "★".repeat(
+                    rounded
+                ) +
+
+                "☆".repeat(
+                    5 - rounded
+                );
+
+
+            element.innerHTML = `
+                <div class="rank">
+                    ${medal}
                 </div>
-            </div>
 
-            <div class="score">
-                ${game.average.toFixed(2)}
-                <br>
-                ${stars}
-            </div>
-        `;
+                <div>
+
+                    <div class="game">
+                    </div>
+
+                    <div class="detail">
+
+                        ${game.count}
+
+                        ${
+                            game.count === 1
+                                ? "hodnotenie"
+                                : "hodnotení"
+                        }
+
+                    </div>
+
+                </div>
+
+                <div class="score">
+
+                    ${game.average.toFixed(2)}
+
+                    <br>
+
+                    ${stars}
+
+                </div>
+            `;
 
 
-        element.querySelector(
-            ".game"
-        ).textContent = game.name;
+            element.querySelector(
+                ".game"
+            ).textContent =
+                game.name;
 
 
-        ranking.appendChild(element);
-    });
+            ranking.appendChild(
+                element
+            );
+        }
+    );
 }
 
 
@@ -926,7 +1356,10 @@ function renderBars(
 ) {
 
     const container =
-        document.getElementById(targetId);
+        document.getElementById(
+            targetId
+        );
+
 
     container.innerHTML = "";
 
@@ -943,10 +1376,13 @@ function renderBars(
     }
 
 
-    const maximum = Math.max(
-        ...items.map(valueFunction),
-        1
-    );
+    const maximum =
+        Math.max(
+            ...items.map(
+                valueFunction
+            ),
+            1
+        );
 
 
     items.forEach(item => {
@@ -954,68 +1390,140 @@ function renderBars(
         const value =
             valueFunction(item);
 
-        const element =
-            document.createElement("div");
 
-        element.className = "bar-wrap";
+        const element =
+            document.createElement(
+                "div"
+            );
+
+
+        element.className =
+            "bar-wrap";
 
 
         element.innerHTML = `
             <div class="bar-head">
-                <strong></strong>
-                <span></span>
+
+                <strong>
+                </strong>
+
+                <span>
+                </span>
+
             </div>
 
             <div class="bar">
+
                 <span
-                    style="width:${
-                        value / maximum * 100
-                    }%">
+                    style="
+                        width:
+                        ${
+                            value /
+                            maximum *
+                            100
+                        }%
+                    "
+                >
                 </span>
+
             </div>
         `;
 
 
         element.querySelector(
             "strong"
-        ).textContent = item.name;
+        ).textContent =
+            item.name;
 
 
         element.querySelector(
             ".bar-head span"
-        ).textContent = labelFunction(item);
+        ).textContent =
+            labelFunction(item);
 
 
-        container.appendChild(element);
+        container.appendChild(
+            element
+        );
     });
 }
 
 
-function renderStatistics(data) {
+function renderStatistics(
+    data
+) {
 
     const aggregated =
         aggregateData(data);
 
 
     const players =
-        [...aggregated.players].sort(
+        [
+            ...aggregated.players
+        ].sort(
             (a, b) =>
-                b.count - a.count ||
-                b.average - a.average
+                b.count -
+                a.count ||
+
+                b.average -
+                a.average
         );
 
 
     const gamesByCount =
-        [...aggregated.games].sort(
+        [
+            ...aggregated.games
+        ].sort(
             (a, b) =>
-                b.count - a.count ||
-                b.average - a.average
+                b.count -
+                a.count ||
+
+                b.average -
+                a.average
+        );
+
+
+    const platformsByCount =
+        [
+            ...aggregated.platforms
+        ].sort(
+            (a, b) =>
+                b.count -
+                a.count ||
+
+                b.average -
+                a.average ||
+
+                a.name.localeCompare(
+                    b.name,
+                    "sk"
+                )
+        );
+
+
+    const platformsByAverage =
+        [
+            ...aggregated.platforms
+        ]
+        .filter(
+            platform =>
+                platform.name !==
+                "Nezaradené"
+        )
+        .sort(
+            (a, b) =>
+                b.average -
+                a.average ||
+
+                b.count -
+                a.count
         );
 
 
     document.getElementById(
         "mRatings"
-    ).textContent = data.length;
+    ).textContent =
+        data.length;
 
 
     document.getElementById(
@@ -1027,104 +1535,179 @@ function renderStatistics(data) {
     document.getElementById(
         "mPlayer"
     ).textContent =
-        players[0]?.name || "–";
+        players[0]?.name ||
+        "–";
 
 
     document.getElementById(
         "mPopular"
     ).textContent =
-        gamesByCount[0]?.name || "–";
+        gamesByCount[0]?.name ||
+        "–";
+
+
+    document.getElementById(
+        "mPlatform"
+    ).textContent =
+        platformsByCount[0]?.name ||
+        "–";
+
+
+    document.getElementById(
+        "mBestPlatform"
+    ).textContent =
+        platformsByAverage[0]?.name ||
+        "–";
 
 
     renderBars(
         "playerStats",
+
         players,
-        player => player.count,
+
         player =>
-            `${player.count} hodnotení • Ø ${
-                player.average.toFixed(2)
-            }`
+            player.count,
+
+        player =>
+            `${player.count} hodnotení • ` +
+            `Ø ${player.average.toFixed(2)}`
+    );
+
+
+    renderBars(
+        "platformStats",
+
+        platformsByCount,
+
+        platform =>
+            platform.count,
+
+        platform =>
+            `${platform.count} hodnotení • ` +
+            `${platform.gameCount} hier • ` +
+            `Ø ${platform.average.toFixed(2)}`
     );
 
 
     renderBars(
         "gameStats",
-        gamesByCount.slice(0, 10),
-        game => game.count,
+
+        gamesByCount.slice(
+            0,
+            10
+        ),
+
         game =>
-            `${game.count}× • Ø ${
-                game.average.toFixed(2)
-            }`
+            game.count,
+
+        game =>
+            `${game.count}× • ` +
+            `Ø ${game.average.toFixed(2)}`
     );
 
 
     const recent =
-        document.getElementById("recent");
+        document.getElementById(
+            "recent"
+        );
+
 
     recent.innerHTML = "";
 
 
-    data.slice(0, 10).forEach(record => {
+    data
+        .slice(0, 10)
+        .forEach(record => {
 
-        const element =
-            document.createElement("div");
-
-        element.className = "row";
-
-
-        let dateText = "";
+            const element =
+                document.createElement(
+                    "div"
+                );
 
 
-        try {
+            element.className =
+                "row";
 
-            if (record.createdAt?.toDate) {
 
-                dateText =
-                    record.createdAt
-                        .toDate()
-                        .toLocaleDateString(
-                            "sk-SK"
-                        );
+            let dateText = "";
+
+
+            try {
+
+                if (
+                    record
+                        .createdAt
+                        ?.toDate
+                ) {
+
+                    dateText =
+                        record
+                            .createdAt
+                            .toDate()
+                            .toLocaleDateString(
+                                "sk-SK"
+                            );
+                }
+
+            } catch (error) {
+
+                dateText = "";
             }
 
-        } catch (error) {
 
-            dateText = "";
-        }
-
-
-        element.innerHTML = `
-            <div>
-                <div class="primary"></div>
-                <div class="detail"></div>
-            </div>
-
-            <div class="score">
-                ${
-                    getRatingAverage(record)
-                        .toFixed(2)
-                } ★
-            </div>
-        `;
+            const platformText =
+                record.platform ||
+                "Nezaradené";
 
 
-        element.querySelector(
-            ".primary"
-        ).textContent = record.game;
+            element.innerHTML = `
+                <div>
+
+                    <div class="primary">
+                    </div>
+
+                    <div class="detail">
+                    </div>
+
+                </div>
+
+                <div class="score">
+
+                    ${
+                        getRatingAverage(
+                            record
+                        ).toFixed(2)
+                    }
+
+                    ★
+
+                </div>
+            `;
 
 
-        element.querySelector(
-            ".detail"
-        ).textContent =
-            `${record.player}${
-                dateText
-                    ? " • " + dateText
-                    : ""
-            }`;
+            element.querySelector(
+                ".primary"
+            ).textContent =
+                record.game;
 
 
-        recent.appendChild(element);
-    });
+            element.querySelector(
+                ".detail"
+            ).textContent =
+                `${record.player} • ` +
+                `${platformText}` +
+                `${
+                    dateText
+                        ? " • " +
+                          dateText
+                        : ""
+                }`;
+
+
+            recent.appendChild(
+                element
+            );
+        });
 
 
     if (!data.length) {
@@ -1142,27 +1725,46 @@ async function loadData() {
 
     try {
 
-        const ratingsQuery = query(
-            collection(db, "ratings"),
-            orderBy("createdAt", "desc")
-        );
+        const ratingsQuery =
+            query(
+                collection(
+                    db,
+                    "ratings"
+                ),
+
+                orderBy(
+                    "createdAt",
+                    "desc"
+                )
+            );
 
 
         const snapshot =
-            await getDocs(ratingsQuery);
+            await getDocs(
+                ratingsQuery
+            );
 
 
         allData =
             snapshot.docs.map(
                 documentSnapshot => ({
-                    id: documentSnapshot.id,
+
+                    id:
+                        documentSnapshot.id,
+
                     ...documentSnapshot.data()
                 })
             );
 
 
-        renderTop10(allData);
-        renderStatistics(allData);
+        renderTop10(
+            allData
+        );
+
+
+        renderStatistics(
+            allData
+        );
 
     } catch (error) {
 
@@ -1174,7 +1776,10 @@ async function loadData() {
 
         flash(
             "Dáta sa nepodarilo načítať: " +
-            (error.code || error.message),
+            (
+                error.code ||
+                error.message
+            ),
             true
         );
     }
@@ -1185,15 +1790,38 @@ async function saveRating() {
 
     const game =
         document
-            .getElementById("game")
+            .getElementById(
+                "game"
+            )
             .value
             .trim();
 
 
     const player =
         document
-            .getElementById("player")
+            .getElementById(
+                "player"
+            )
             .value;
+
+
+    const platform =
+        document
+            .getElementById(
+                "platform"
+            )
+            .value;
+
+
+    if (!platform) {
+
+        flash(
+            "Vyber platformu.",
+            true
+        );
+
+        return;
+    }
 
 
     if (!game) {
@@ -1209,7 +1837,8 @@ async function saveRating() {
 
     if (
         answers.some(
-            value => value < 1
+            value =>
+                value < 1
         )
     ) {
 
@@ -1223,26 +1852,53 @@ async function saveRating() {
 
 
     const saveButton =
-        document.getElementById("saveBtn");
+        document.getElementById(
+            "saveBtn"
+        );
 
 
-    saveButton.disabled = true;
+    saveButton.disabled =
+        true;
 
 
     try {
 
         await addDoc(
-            collection(db, "ratings"),
+            collection(
+                db,
+                "ratings"
+            ),
+
             {
-                player: player,
-                game: game,
+                player:
+                    player,
+
+                platform:
+                    platform,
+
+                game:
+                    game,
+
                 gameKey:
-                    normalizeGameName(game),
-                fun: answers[0],
-                gameplay: answers[1],
-                again: answers[2],
-                controls: answers[3],
-                recommend: answers[4],
+                    normalizeGameName(
+                        game
+                    ),
+
+                fun:
+                    answers[0],
+
+                gameplay:
+                    answers[1],
+
+                again:
+                    answers[2],
+
+                controls:
+                    answers[3],
+
+                recommend:
+                    answers[4],
+
                 createdAt:
                     serverTimestamp()
             }
@@ -1259,13 +1915,23 @@ async function saveRating() {
         ).value = "";
 
 
+        document.getElementById(
+            "platform"
+        ).value = "";
+
+
         answers.fill(0);
 
 
         document
-            .querySelectorAll(".star")
+            .querySelectorAll(
+                ".star"
+            )
             .forEach(star => {
-                star.classList.remove("on");
+
+                star.classList.remove(
+                    "on"
+                );
             });
 
 
@@ -1281,21 +1947,31 @@ async function saveRating() {
 
         flash(
             "Uloženie zlyhalo: " +
-            (error.code || error.message),
+            (
+                error.code ||
+                error.message
+            ),
             true
         );
 
     } finally {
 
-        saveButton.disabled = false;
+        saveButton.disabled =
+            false;
     }
 }
 
 
-function csvCell(value) {
+function csvCell(
+    value
+) {
 
-    return `"${String(value ?? "")
-        .replace(/"/g, '""')}"`;
+    return `"${String(
+        value ?? ""
+    ).replace(
+        /"/g,
+        '""'
+    )}"`;
 }
 
 
@@ -1314,6 +1990,7 @@ function exportCSV() {
     const header = [
         "Datum",
         "Hrac",
+        "Platforma",
         "Hra",
         "Zabava",
         "Hratelnost",
@@ -1338,10 +2015,15 @@ function exportCSV() {
 
         try {
 
-            if (record.createdAt?.toDate) {
+            if (
+                record
+                    .createdAt
+                    ?.toDate
+            ) {
 
                 dateText =
-                    record.createdAt
+                    record
+                        .createdAt
                         .toDate()
                         .toLocaleString(
                             "sk-SK"
@@ -1357,16 +2039,32 @@ function exportCSV() {
         rows.push(
             [
                 dateText,
+
                 record.player,
+
+                record.platform ||
+                "Nezaradené",
+
                 record.game,
+
                 record.fun,
+
                 record.gameplay,
+
                 record.again,
+
                 record.controls,
+
                 record.recommend,
-                getRatingAverage(record)
-                    .toFixed(2)
-                    .replace(".", ",")
+
+                getRatingAverage(
+                    record
+                )
+                .toFixed(2)
+                .replace(
+                    ".",
+                    ","
+                )
             ]
             .map(csvCell)
             .join(";")
@@ -1378,7 +2076,9 @@ function exportCSV() {
         new Blob(
             [
                 "\ufeff" +
-                rows.join("\r\n")
+                rows.join(
+                    "\r\n"
+                )
             ],
             {
                 type:
@@ -1388,20 +2088,29 @@ function exportCSV() {
 
 
     const url =
-        URL.createObjectURL(blob);
+        URL.createObjectURL(
+            blob
+        );
 
 
     const link =
-        document.createElement("a");
+        document.createElement(
+            "a"
+        );
 
 
-    link.href = url;
+    link.href =
+        url;
+
 
     link.download =
         "fisibox_hodnotenia.csv";
 
 
-    document.body.appendChild(link);
+    document.body.appendChild(
+        link
+    );
+
 
     link.click();
 
@@ -1409,33 +2118,43 @@ function exportCSV() {
 
 
     setTimeout(() => {
-        URL.revokeObjectURL(url);
+
+        URL.revokeObjectURL(
+            url
+        );
+
     }, 1500);
 }
 
 
 document.getElementById(
     "saveBtn"
-).onclick = saveRating;
+).onclick =
+    saveRating;
 
 
 document.getElementById(
     "reloadBtn"
-).onclick = loadData;
+).onclick =
+    loadData;
 
 
 document.getElementById(
     "refreshStatsBtn"
-).onclick = loadData;
+).onclick =
+    loadData;
 
 
 document.getElementById(
     "exportBtn"
-).onclick = exportCSV;
+).onclick =
+    exportCSV;
 
 
 document
-    .querySelectorAll(".nav button")
+    .querySelectorAll(
+        ".nav button"
+    )
     .forEach(button => {
 
         button.onclick = () => {
@@ -1454,7 +2173,9 @@ document
 
 
             document
-                .querySelectorAll(".page")
+                .querySelectorAll(
+                    ".page"
+                )
                 .forEach(page => {
 
                     page.classList.remove(
@@ -1469,7 +2190,9 @@ document
                     button.dataset.page
                 )
                 .classList
-                .add("active");
+                .add(
+                    "active"
+                );
 
 
             window.scrollTo({
@@ -1482,7 +2205,9 @@ document
 
 try {
 
-    await signInAnonymously(auth);
+    await signInAnonymously(
+        auth
+    );
 
 
     document.getElementById(
@@ -1502,11 +2227,13 @@ try {
 
 
     const code =
-        error?.code || "bez-kódu";
+        error?.code ||
+        "bez-kódu";
 
 
     const message =
-        error?.message || String(error);
+        error?.message ||
+        String(error);
 
 
     document.getElementById(
